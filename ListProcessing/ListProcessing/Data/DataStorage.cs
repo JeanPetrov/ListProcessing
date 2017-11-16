@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using ListProcessing.Data.Contracts;
-using ListProcessing.IO.Contracts;
-
-namespace ListProcessing.Data
+﻿namespace ListProcessing.Data
 {
-	public class DataStorage:IDataStorage
+    using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using Data.Contracts;
+    using IO.Contracts;
+
+    public class DataStorage:IDataStorage
 	{
 
 		private IList<String> list;
@@ -21,6 +22,11 @@ namespace ListProcessing.Data
 		{
 			this.list.Add(text);
 		}
+
+        public void Reverse()
+        {
+           this.list = Enumerable.Reverse(this.list).ToList();
+        }
 
 		public IList<string> List
 		{

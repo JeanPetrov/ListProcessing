@@ -6,6 +6,8 @@ namespace ListProcessing.Data.Contracts
 	{
 		void Add(string text);
 
+        void Reverse();
+
 		IList<string> List { get; }
 	}
 }
