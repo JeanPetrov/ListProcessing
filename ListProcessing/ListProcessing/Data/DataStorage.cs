@@ -28,6 +28,11 @@
            this.list = Enumerable.Reverse(this.list).ToList();
         }
 
+        public void Sort()
+        {
+            this.list = this.list.OrderBy(x => x).ToList();
+        }
+
 		public IList<string> List
 		{
 			get { return this.list; }

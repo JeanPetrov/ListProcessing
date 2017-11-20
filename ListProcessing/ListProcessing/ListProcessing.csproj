@@ -50,6 +50,7 @@
     <Compile Include="Commands\InsertCommand.cs" />
     <Compile Include="Commands\PrependCommand.cs" />
     <Compile Include="Commands\ReverseCommand.cs" />
+    <Compile Include="Commands\SortCommand.cs" />
     <Compile Include="Core\CommandProcessor.cs" />
     <Compile Include="Core\Contracts\ICommandProcessor.cs" />
     <Compile Include="Core\Contracts\IEngine.cs" />

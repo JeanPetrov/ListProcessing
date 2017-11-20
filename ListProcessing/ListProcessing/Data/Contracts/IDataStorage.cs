@@ -8,6 +8,8 @@ namespace ListProcessing.Data.Contracts
 
         void Reverse();
 
-		IList<string> List { get; }
+        void Sort();
+
+        IList<string> List { get; }
 	}
 }
