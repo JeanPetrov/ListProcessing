@@ -45,6 +45,7 @@
     <Compile Include="Commands\AppendCommand.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
+    <Compile Include="Commands\DeleteCommand.cs" />
     <Compile Include="Commands\InsertCommand.cs" />
     <Compile Include="Commands\PrependCommand.cs" />
     <Compile Include="Commands\ReverseCommand.cs" />

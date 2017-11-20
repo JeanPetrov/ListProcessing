@@ -13,7 +13,7 @@
 
         public override string Execute()
         {
-            if (this.commandArgs.Count != 2)
+            if (this.commandArgs.Count != 2 || int.Parse(commandArgs[0]) < 0)
             {
                 return Constants.invalidParametersCountMessage;
             }
