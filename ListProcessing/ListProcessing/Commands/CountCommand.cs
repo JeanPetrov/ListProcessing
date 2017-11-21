@@ -19,7 +19,7 @@
                 return Constants.invalidParametersCountMessage;
             }
 
-            return this.dataStorage.List.Where(w => w == this.commandArgs[0]).Count().ToString();
+	        return this.dataStorage.CountOccurs(this.commandArgs[0]);
         }
     }
 }

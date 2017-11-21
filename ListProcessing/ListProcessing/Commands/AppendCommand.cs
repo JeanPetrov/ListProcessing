@@ -13,16 +13,16 @@ namespace ListProcessing.Commands
 
 		public override string Execute()
 		{
-			if (this.commandArgs.Count!=1)
+			var listCount = this.dataStorage.Count();
+
+			if (this.commandArgs.Count != 1)
 			{
 				return Constants.invalidParametersCountMessage;
 			}
 			var text = this.commandArgs[0];
-			this.dataStorage.Add(text);
-			return string.Join(" ",this.dataStorage.List);
+			this.dataStorage.Insert(listCount, text);
+
+			return this.dataStorage.JoinedList();
 		}
-
-
-		
 	}
 }

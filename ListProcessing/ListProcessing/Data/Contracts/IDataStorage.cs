@@ -4,12 +4,23 @@ namespace ListProcessing.Data.Contracts
 {
 	public interface IDataStorage
 	{
-		void Add(string text);
 
         void Reverse();
 
         void Sort();
 
-        IList<string> List { get; }
+		void Insert(int position, string text);
+
+		int Count();
+
+		void Remove(int position);
+
+		string GetLast();
+
+		string GetFirst();
+
+		string JoinedList();
+
+		string CountOccurs(string pattern);
 	}
 }

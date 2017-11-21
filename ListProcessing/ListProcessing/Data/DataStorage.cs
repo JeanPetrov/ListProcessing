@@ -18,11 +18,6 @@
 			this.writer = writer;
 		}
 
-		public void Add(string text)
-		{
-			this.list.Add(text);
-		}
-
         public void Reverse()
         {
            this.list = Enumerable.Reverse(this.list).ToList();
@@ -32,10 +27,39 @@
         {
             this.list = this.list.OrderBy(x => x).ToList();
         }
-
-		public IList<string> List
+		public void Insert(int position, string text)
 		{
-			get { return this.list; }
+			this.list.Insert(position, text);
+		}
+
+		public void Remove(int position)
+		{
+			this.list.RemoveAt(position);
+		}
+
+		public int Count()
+		{
+			return this.list.Count();
+		}
+
+		public string GetFirst()
+		{
+			return this.list[0];
+		}
+
+		public string GetLast()
+		{
+			return this.list[this.Count() - 1];
+		}
+
+		public string JoinedList()
+		{
+			return string.Join(" ", this.list);
+		}
+
+		public string CountOccurs(string pattern)
+		{
+			return this.list.Where(w => w == pattern).Count().ToString();
 		}
 	}
 }

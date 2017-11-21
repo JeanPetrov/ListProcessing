@@ -10,15 +10,25 @@
         {
         }
 
-        public override string Execute()
-        {
-            if (this.commandArgs.Count != 1)
-            {
-                return Constants.invalidParametersCountMessage;
-            }
-            this.dataStorage.List.RemoveAt(int.Parse(commandArgs[0]));
+		public override string Execute()
+		{
+			var listCount = this.dataStorage.Count();
 
-            return string.Join(" ", this.dataStorage.List);
-        }
-    }
+			bool isNumeric = int.TryParse(this.commandArgs[0], out int variable);
+
+			if (this.commandArgs.Count != 1 || !isNumeric)
+			{
+				return Constants.invalidParametersCountMessage;
+			}
+
+			if (variable < 0 || variable > listCount - 1)
+			{
+				return $"Error: invalid index {variable}";
+			}
+
+			this.dataStorage.Remove(variable);
+
+			return this.dataStorage.JoinedList();
+		}
+	}
 }

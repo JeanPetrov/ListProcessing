@@ -44,7 +44,8 @@ namespace ListProcessing.Core
 		{
 			string input = this.reader.ReadLine();
 			this.writer.WriteLine(input);
-			this.dataStorage = new DataStorage(input.Split(new char[' '], StringSplitOptions.RemoveEmptyEntries).ToList(),this.writer);
+			var inputList = input.Split(new char[]{' '}, StringSplitOptions.RemoveEmptyEntries).ToList();
+			this.dataStorage = new DataStorage(inputList,this.writer);
 		}
 		
 	}

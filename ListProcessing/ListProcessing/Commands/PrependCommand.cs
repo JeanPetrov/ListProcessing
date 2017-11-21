@@ -11,15 +11,15 @@
 
         }
 
-        public override string Execute()
-        {
-            if (this.commandArgs.Count != 1)
-            {
-                return Constants.invalidParametersCountMessage;
-            }
-            this.dataStorage.List.Insert(0, this.commandArgs[0]);
+		public override string Execute()
+		{
+			if (this.commandArgs.Count != 1)
+			{
+				return Constants.invalidParametersCountMessage;
+			}
+			this.dataStorage.Insert(0, this.commandArgs[0]);
 
-            return string.Join(" ", this.dataStorage.List);
-        }
-    }
+			return this.dataStorage.JoinedList();
+		}
+	}
 }

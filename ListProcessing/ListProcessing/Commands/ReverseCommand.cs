@@ -20,7 +20,7 @@
 
             this.dataStorage.Reverse();
 
-            return string.Join(" ", this.dataStorage.List);
-        }
+			return this.dataStorage.JoinedList();
+		}
     }
 }
